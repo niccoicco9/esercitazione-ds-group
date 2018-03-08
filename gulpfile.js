@@ -1,4 +1,5 @@
 /* jshint esversion:6 */
+/* global require */
 
 const jshint = require('gulp-jshint');
 const gulp = require('gulp');
