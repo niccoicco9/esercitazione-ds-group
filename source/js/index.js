@@ -5,17 +5,17 @@ $(document).ready(function() {
   "use strict";
   /* salvo in una variabile il numero di post da visualizzare sulla pagina */
   const number = 8;
-  getPosts(number);
+  getTodos(number);
 });
 
-function getPosts(number) {
+function getTodos(number) {
   "use strict";
   for (var i = 0; i < number; i++) {
 	(function(i) {
 		var randomInt = getRandomInt(0, 200);
 		$.getJSON(`https://jsonplaceholder.typicode.com/todos/${randomInt}`, function(data) {
 			var rowPost = $("#row-post");
-			rowPost.append(`<div class='col-md-3'><div class='card' style='width: 18rem;'><div class='card-body'><h5 class='card-title'>${data.title}</h5><p class='card-text'></p><a href='todo.html' class='btn btn-primary'>Visualizza</a></div></div></div>`);
+			rowPost.append(`<div class='col-md-3'><div class='card' style='width: 18rem;'><div class='card-body'><h5 class='card-title'>${data.title}</h5><p class='card-text'></p><a href='dettaglio.html#${data.id}' class='btn btn-primary'>Visualizza</a></div></div></div>`);
 		});
 	})(i);
   }
