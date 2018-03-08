@@ -1,6 +1,8 @@
 # esercitazione-ds-group
 Esercitazione DS Group sulle tecnologie studiate
 
+Tecnologie utilizzate: HTML, CSS, javascript, jQuery, Bootstrap
+
 L'idea originaria era quella di gestire degli elementi di tipo post prelevati dall'applicativo REST. Abbiamo optato però
 successivamente per i todo. Il motivo è che a nostro parere si adattano meglio all'implementazione della funzionalità di 
 modifica item. 
