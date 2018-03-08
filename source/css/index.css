@@ -4,17 +4,16 @@ header {
 main .row {
   padding: 50px; }
 
-#todocard{
-  height:500px;
-}
-
-#socialicon ul li {
-  list-style:none;
-  display:inline;
-  float:right;
-  margin-left:20px;
-}
-
 #todo-action {
   float: right; }
 
+@media (max-width: 1253px) {
+  .topnav a {
+    float: none;
+    width: 100%; } }
+
+#socialicon ul li {
+  list-style: none;
+  display: inline;
+  float: right;
+  margin: 15px; }
