@@ -20,8 +20,6 @@ function login(form) {
 	var password = form.elements[1].value;
 }
 
-
-
 function signin(form) {
 	'use strict';
 	var user = {
