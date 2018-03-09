@@ -13,3 +13,13 @@ function getData() {
         }
     };
 }
+
+function login() {
+	'use strict';
+	alert("login");
+}
+
+function signin() {
+	'use strict';
+	alert("signin");
+}
