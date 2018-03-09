@@ -3,11 +3,17 @@
 
 $(document).ready(function() {
   "use strict";
-  /* salvo in una variabile il numero di todo da visualizzare sulla pagina */
-  const number = 8;
-  getTodos(number);
+  
+  getData().extractUserTodos(function(data) {
+
+
+	
+
+
+  });
 });
 
+/*
 function getTodos(number) {
   "use strict";
   for (var i = 0; i < number; i++) {
@@ -28,7 +34,7 @@ function getTodos(number) {
       );
     })(i);
   }
-}
+}*/
 
 function getRandomInt(min, max) {
   "use strict";
