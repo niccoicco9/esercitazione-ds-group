@@ -14,12 +14,13 @@ function getData() {
     };
 }
 
-function login() {
+function login(form) {
 	'use strict';
-	alert("login");
+	alert("login function");
 }
 
-function signin() {
+function signin(form) {
 	'use strict';
-	alert("signin");
+	alert("signin function");
+
 }
