@@ -16,11 +16,31 @@ function getData() {
 
 function login(form) {
 	'use strict';
-	alert("login function");
+	var email = form.elements[0].value;
+	var password = form.elements[1].value;
 }
 
 function signin(form) {
 	'use strict';
-	alert("signin function");
+	var user = {
+		email: form.elements[0].value,
+		password: form.elements[1].value
+	};
 
+	if (localStorage && localStorage.getItem('users') === null) {
+		var users = new Array();
+		users.push(user);
+	} else {
+		
+
+
+
+	}
+
+
+
+
+
+
+	localStorage.setItem('users', JSON.stringify(users));
 }
