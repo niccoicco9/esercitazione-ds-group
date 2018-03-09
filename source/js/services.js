@@ -26,7 +26,7 @@ function signin(form) {
 	'use strict';
 	var user = {
 		email: form.elements[0].value,
-		password: form.elements[1].value 
+		password: form.elements[1].value
 	};
 	var usersArray = [];
 	if (localStorage && localStorage.getItem('users') === null) {
