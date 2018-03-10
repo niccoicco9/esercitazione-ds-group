@@ -1,4 +1,5 @@
 /* global $ */
+/* exported getData, login, signin */
 
 var url = 'https://jsonplaceholder.typicode.com/todos/';
 
@@ -24,15 +25,16 @@ function signin(form) {
 	'use strict';
 	var user = {
 		email: form.elements[0].value,
-		password: form.elements[1].value
+		password: form.elements[1].value,
+		id: getRandomInt(1, 11)
 	};
 	var usersArray = [];
 	if (localStorage && localStorage.getItem('users') === null) {
 		usersArray.push(user);
 		localStorage.setItem('users', JSON.stringify(usersArray));
 	} else {
+		usersArray = JSON.parse(localStorage.getItem('users'));
 		var i = 0;
-        usersArray = JSON.parse(localStorage.getItem('users'));
         while (i >= 0 && i < usersArray.length) {
             if (usersArray[i].email.trim() === user.email.trim()) {
                 i = -1;
@@ -48,3 +50,11 @@ function signin(form) {
 		}
 	}
 }
+
+
+function getRandomInt(min, max) {
+	'use strict';
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min)) + min; //Il max è escluso e il min è incluso
+  }

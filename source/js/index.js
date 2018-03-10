@@ -17,7 +17,6 @@ function addListeners() {
 }
 
 function checkForm() {
-	alert(this.id);
 	if (this.checkValidity() === false) {
 		event.preventDefault();
 		event.stopPropagation();
