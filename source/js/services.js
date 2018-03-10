@@ -1,5 +1,5 @@
 /* global $ */
-/* exported getData, signin, login, logout*/
+/* exported getData, signin, login, logout, checkLogin*/
 
 var url = 'https://jsonplaceholder.typicode.com/todos/';
 
@@ -76,6 +76,15 @@ function logout() {
 	'use strict';
 	sessionStorage.removeItem('onlineUser');
 	window.alert("Hai effettuato il logout.");
+}
+
+function checkLogin() {
+	'use strict';
+	if (sessionStorage && sessionStorage.getItem('onlineUser')) {
+		var onlineUser = JSON.parse(localStorage.getItem('users'));
+		document.getElementById('nav-login').innerHTML = onlineUser[0].email;
+		document.getElementById('nav-signin').innerHTML = "Logout (inserire funzione logout)";
+	}
 }
 
 function getRandomInt(min, max) {

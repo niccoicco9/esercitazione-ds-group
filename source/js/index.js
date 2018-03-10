@@ -1,7 +1,8 @@
-/* global login, signin */
+/* global checkLogin, login, signin */
 
 window.addEventListener('load', function() {
 	'use strict';
+	checkLogin();
 	addListeners();
 });
 
