@@ -97,6 +97,7 @@ function getRandomInt(min, max) {
 function showTodos(data, userId) {
 	'use strict';
 	var htmlString = '';
+	
 	for (var i = 0; i < data.length; i++) {
 		if (data[i].userId === userId) {
 			if (data[i].completed === true) {
@@ -105,7 +106,7 @@ function showTodos(data, userId) {
 				htmlString+="<tr class='table-light' id='table-row-" + data[i].id + "'>";
 			}
 			htmlString+="<th scope='row'>" + data[i].id + "</th><td>" + data[i].title + "</td>";
-			htmlString+="<td><button type='button' class='btn btn-light'>Visualizza dettaglio</button>";
+			htmlString+="<td><a href='dettaglio.html#" + window.btoa(JSON.stringify(data[i])) + "' class='btn btn-light'>Visualizza dettaglio</a>";
 			htmlString+="<button type='button' class='btn btn-danger'>Elimina todo</button></td>";
 			htmlString+="</tr>";
 		}
