@@ -1,4 +1,4 @@
-/* global $ */
+/* global $, showTodos*/
 /* exported getData, signin, login, logout, checkLogin*/
 
 var url = 'https://jsonplaceholder.typicode.com/todos/';
@@ -10,17 +10,6 @@ function getData() {
             $.getJSON(url, callback);
         }
     };
-}
-
-function showTodos(data) {
-	'use strict';
-	for (var i = 0; i < data.length; i++) {
-		
-
-
-
-
-	}
 }
 
 function signin(form) {
