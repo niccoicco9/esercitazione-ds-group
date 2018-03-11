@@ -62,7 +62,7 @@ function login(form) {
 				sessionStorage.setItem('onlineUser', JSON.stringify(usersArray[i]));
 				window.alert(email + " ha effettuato il login.");
                 i = -1;
-            } else {
+            } else { 
 				i++;
 			}
         }
@@ -82,8 +82,8 @@ function checkLogin() {
 	'use strict';
 	if (sessionStorage && sessionStorage.getItem('onlineUser')) {
 		var onlineUser = JSON.parse(localStorage.getItem('users'));
-		document.getElementById('nav-login').innerHTML = onlineUser[0].email;
-		document.getElementById('nav-signin').innerHTML = "Logout (inserire funzione logout)";
+		document.getElementById('nav-login').innerHTML = "<a class='nav-link' href='index.html' onclick='logout()'>Logout</a>";
+		document.getElementById('nav-signin').innerHTML = "<a class='nav-link' href='index.html'>" + onlineUser[0].email + "</a>";
 	}
 }
 
