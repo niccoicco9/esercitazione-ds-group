@@ -1,5 +1,5 @@
-/* global $, showTodos*/
-/* exported getData, signin, login, logout, checkLogin*/
+/* global $*/
+/* exported getData, showTodos, signin, login, logout, checkLogin*/
 
 var url = 'https://jsonplaceholder.typicode.com/todos/';
 
@@ -78,11 +78,11 @@ function logout() {
 function checkLogin() {
 	'use strict';
 	if (sessionStorage && sessionStorage.getItem('onlineUser')) {
-		var onlineUser = JSON.parse(localStorage.getItem('users'));
+		var onlineUser = JSON.parse(sessionStorage.getItem('onlineUser'));
 		document.getElementById('nav-login').innerHTML = "<a class='nav-link' href='index.html' onclick='logout()'>Logout</a>";
-		document.getElementById('nav-signin').innerHTML = "<a class='nav-link' href='index.html'>" + onlineUser[0].email + "</a>";
+		document.getElementById('nav-signin').innerHTML = "<a class='nav-link' href='index.html'>" + onlineUser.email + "</a>";
 		getData().extractTodos(function(data) { 
-			showTodos(data); 
+			showTodos(data, onlineUser.id); 
 		});
 	}
 }
@@ -93,3 +93,10 @@ function getRandomInt(min, max) {
 	max = Math.floor(max);
 	return Math.floor(Math.random() * (max - min)) + min; //Il max è escluso e il min è incluso
   }
+
+function showTodos(data, userId) {
+	'use strict';
+	for (var i = 0; i < data.length; i++) {
+		console.log(data[i].id);
+	}
+}
