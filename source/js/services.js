@@ -8,11 +8,19 @@ function getData() {
     return {
         extractTodos: function(callback) {
             $.getJSON(url, callback);
-        },
-        extractUserTodo: function(user, callback) {
-            $.getJSON(url, callback);
         }
     };
+}
+
+function showTodos(data) {
+	'use strict';
+	for (var i = 0; i < data.length; i++) {
+		
+
+
+
+
+	}
 }
 
 function signin(form) {
@@ -58,16 +66,16 @@ function login(form) {
         var i = 0;
         while (i >= 0 && i < usersArray.length) {
             if (usersArray[i].email.trim() === email.trim() && usersArray[i].password === password) {
-                delete usersArray[i].password;
 				sessionStorage.setItem('onlineUser', JSON.stringify(usersArray[i]));
-				window.alert(email + " ha effettuato il login.");
                 i = -1;
             } else { 
 				i++;
 			}
-        }
+		}
         if (i !== -1) {
 			window.alert('Indirizzo email o password errata');
+		} else {
+			window.alert(email + " ha effettuato il login.");
 		}
     }
 }
@@ -84,6 +92,9 @@ function checkLogin() {
 		var onlineUser = JSON.parse(localStorage.getItem('users'));
 		document.getElementById('nav-login').innerHTML = "<a class='nav-link' href='index.html' onclick='logout()'>Logout</a>";
 		document.getElementById('nav-signin').innerHTML = "<a class='nav-link' href='index.html'>" + onlineUser[0].email + "</a>";
+		getData().extractTodos(function(data) { 
+			showTodos(data); 
+		});
 	}
 }
 
