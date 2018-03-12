@@ -14,4 +14,28 @@ function showTodos(data, userId) {
 		}
 	}
 	document.getElementById('table-body-todos').innerHTML = htmlString;
+	showCreateTodo();
 }
+
+function showCreateTodo() {
+
+
+
+
+}
+
+
+
+/*<tbody>
+	<tr>
+		<form>
+			<td></td>
+			<td>
+				<div class="form-group">
+					<input type="text" class="form-control" id="input-todo" placeholder="Titolo del nuovo todo">
+				</div>
+			</td>
+			<td class="td-center-content"><button type="submit" class="btn btn-light">Crea todo</button></td>
+		</form>
+	</tr>
+</tbody>*/
