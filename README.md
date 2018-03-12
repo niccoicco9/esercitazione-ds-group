@@ -5,10 +5,28 @@ Tecnologie utilizzate: HTML, CSS, javascript, jQuery, Bootstrap
 
 L'idea originaria era quella di gestire degli elementi di tipo post prelevati dall'applicativo REST. Abbiamo optato però
 successivamente per i todo. Il motivo è che a nostro parere si adattano meglio all'implementazione della funzionalità di 
-modifica item. 
+modifica item. I todo sono associati tramite id a un particolare utente, ed è infatti possibile registrarsi tramite un form: a registrazione effettuata verrà associato all'utente un id selezionato casualmente.
 
-Una volta caricata la pagina index.html vengono scaricati un numero fisso di todos (8) e, tramite jQuery, create tante
-componenti 'cards' di Bootstrap quanti sono i todos. 
+All'avvio della pagina index.html:
+
+<pre>window.addEventListener('load', function() {
+	'use strict';
+	checkLogin();
+	addListeners();
+});</pre>
+
+<pre>function checkLogin() {
+	'use strict';
+	if (sessionStorage && sessionStorage.getItem('onlineUser')) {
+		var onlineUser = JSON.parse(sessionStorage.getItem('onlineUser'));
+		document.getElementById('nav-login').innerHTML = "<a class='nav-link' href='index.html' onclick='logout()'>Logout</a>";
+		document.getElementById('nav-signin').innerHTML = "<a class='nav-link' href='index.html'>" + onlineUser.email + "</a>";
+		getData().extractTodos(function(data) { 
+			showTodos(data, onlineUser.id); 
+		});
+	}
+}</pre>
+
+All'avvio della pagina index.html vengono eseguite le funzioni che gestiscono il controllo 
 
 Cliccando su un todo si passa alla pagina di dettaglio del todo stesso, che può essere completato oppure no.  
-<pre>dddddddddd</pre>
