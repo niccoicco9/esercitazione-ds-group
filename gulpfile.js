@@ -7,7 +7,7 @@ const sass = require('gulp-sass');
 
 gulp.task('jshint', function() {
     'use strict';
-    return gulp.src('./source/javascript/*.js').pipe(jshint()).pipe(jshint.reporter('jshint-stylish'));
+    return gulp.src('./source/js/*.js').pipe(jshint()).pipe(jshint.reporter('jshint-stylish'));
 });
 
 gulp.task('sass', function() {

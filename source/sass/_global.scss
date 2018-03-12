@@ -1,11 +1,33 @@
 header {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 main .row {
-    padding: 50px;
+    padding: 0px 50px 20px 50px;
 }
 
 #todo-action {
     float: right;
+}
+
+@media (max-width: 1253px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+}
+#socialicon ul li{
+    list-style:none;
+    display:inline;
+    float:right;
+    margin:15px;
+
+
+
+.td-center-content {
+    text-align: center;
+}
+
+.td-center-content * {
+    margin: 0px 5px 0px 5px;
 }
