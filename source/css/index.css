@@ -6,3 +6,6 @@ main .row {
 
 #todo-action {
   float: right; }
+
+.td-center-content {
+  text-align: center; }
