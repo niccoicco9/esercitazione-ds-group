@@ -100,11 +100,7 @@ function showTodos(data, userId) {
 	
 	for (var i = 0; i < data.length; i++) {
 		if (data[i].userId === userId) {
-			if (data[i].completed === true) {
-				htmlString+="<tr class='table-success' id='table-row-" + data[i].id + "'>";
-			} else {
-				htmlString+="<tr class='table-light' id='table-row-" + data[i].id + "'>";
-			}
+			htmlString+="<tr class='table-light' id='table-row-" + data[i].id + "'>";
 			htmlString+="<th scope='row'>" + data[i].id + "</th><td>" + data[i].title + "</td>";
 			htmlString+="<td><a href='dettaglio.html#" + window.btoa(JSON.stringify(data[i])) + "' class='btn btn-light'>Visualizza dettaglio</a>";
 			htmlString+="<button type='button' class='btn btn-danger'>Elimina todo</button></td>";
