@@ -9,8 +9,20 @@ function getData() {
         extractTodos: function(callback) {
             $.getJSON(url, callback);
         }
-    };
+	};
 }
+
+function postData() {
+	'use strict';
+	return {
+		newTodo: function(callback) {
+			$.post( "ajax/test.html", function( data ) {
+				$( ".result" ).html( data );
+			  });
+		}
+	};
+}
+
 
 function signin(form) {
 	'use strict';
