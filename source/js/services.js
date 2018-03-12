@@ -16,7 +16,7 @@ function signin(form) {
 	'use strict';
 	var user = {
 		email: form.elements[0].value,
-		password: form.elements[1].value,
+		password: window.btoa(form.elements[1].value),
 		id: getRandomInt(1, 11)
 	};
 	var usersArray = [];
@@ -54,7 +54,7 @@ function login(form) {
 		var usersArray = JSON.parse(localStorage.getItem('users'));
         var i = 0;
         while (i >= 0 && i < usersArray.length) {
-            if (usersArray[i].email.trim() === email.trim() && usersArray[i].password === password) {
+            if (usersArray[i].email.trim() === email.trim() && window.atob(usersArray[i].password) === password) {
 				sessionStorage.setItem('onlineUser', JSON.stringify(usersArray[i]));
                 i = -1;
             } else { 
