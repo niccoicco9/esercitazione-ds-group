@@ -21,7 +21,7 @@ window.addEventListener('load', function() {
 
 La funzione checkLogin() controlla che sia stato effettuato effettivamente l'accesso controllando l'item 'onlineUser' salvato nel sessionStorage del browser; se positivo, viene eseguita la funzione 'extractTodos()' che preleva i dati dal servizio REST. I dati verranno poi mostrati in una tabella creata in fase di binding, nella funzione showTodos().
 
-<div class="highlight highlight-source-js">
+<div class="highlight highlight-source-js highlight-text-html-basic">
 <pre>
 function checkLogin() {
 'use strict';
