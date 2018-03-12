@@ -1,38 +1,32 @@
-/*jshint esversion: 6 */
-/* global $ */
+/* global checkLogin, login, signin */
 
-$(document).ready(function() {
-  "use strict";
-  /* salvo in una variabile il numero di todo da visualizzare sulla pagina */
-  const number = 8;
-  getTodos(number);
+window.addEventListener('load', function() {
+	'use strict';
+	checkLogin();
+	addListeners();
 });
 
-function getTodos(number) {
-  "use strict";
-  for (var i = 0; i < number; i++) {
-    (function(i) {
-      var randomInt = getRandomInt(0, 200);
-      $.getJSON(
-        `https://jsonplaceholder.typicode.com/todos/${randomInt}`,
-        function(data) {
-          var rowPost = $("#row-post");
-          rowPost.append(
-            `<div class='col-md-3'><div class='card' style='width: 18rem;'><div class='card-body'><h5 class='card-title'>${
-              data.title
-            }</h5><p class='card-text'></p><a href='dettaglio.html#${
-              data.id
-            }' class='btn btn-primary'>Visualizza</a></div></div></div>`
-          );
-        }
-      );
-    })(i);
-  }
+function addListeners() {
+	'use strict';
+	// Example starter JavaScript for disabling form submissions if there are invalid fields
+	// Fetch all the forms we want to apply custom Bootstrap validation styles to
+	var forms = document.getElementsByClassName('needs-validation');
+	// Loop over them and prevent submission
+	for (var i = 0; i < forms.length; i++) {
+		forms[i].addEventListener('submit', checkForm, false);
+	}
 }
 
-function getRandomInt(min, max) {
-  "use strict";
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
+function checkForm() {
+	if (this.checkValidity() === false) {
+		event.preventDefault();
+		event.stopPropagation();
+	} else {
+		if (this.id === 'form-login') {
+			login(this);
+		} else {
+			signin(this);
+		}
+	}
+	this.classList.add('was-validated');
 }

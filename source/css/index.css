@@ -1,5 +1,6 @@
 header {
-  margin-bottom: 20px; }
+  margin-bottom: 50px; }
+
 
 #todo-action {
   float: right; }
@@ -19,32 +20,16 @@ header {
     margin:0 auto;
     margin-top:3%;
 }
-.row{
-  text-align:center;
-}
 
-.right_box {
-  -webkit-box-shadow: -2px 0px 2px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: -2px 0px 2px 0px rgba(0,0,0,0.75);
-  box-shadow: -2px 0px 2px 0px rgba(0,0,0,0.75);
-  }
-  
-  .card {
-  border-radius: 0 !important;
-  border: 0 none;
-  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
-  -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
-  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
-  margin-left: 1px;
-  margin-right: 1px;
-  }
-  
-  .card-img-top {
-  width: 100%;
-  border-radius: 0 !important;
-  }
-  
-  .card-columns {
-  padding-top: 15px;
-  }
- 
+main .row {
+  padding: 0px 50px 20px 50px; }
+
+#todo-action {
+  float: right; }
+
+.td-center-content {
+  text-align: center; }
+
+.td-center-content * {
+  margin: 0px 5px 0px 5px; }
+
