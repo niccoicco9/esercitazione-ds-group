@@ -10,6 +10,20 @@ main .row {
     float: right;
 }
 
+@media (max-width: 1253px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+}
+#socialicon ul li{
+    list-style:none;
+    display:inline;
+    float:right;
+    margin:15px;
+
+
+
 .td-center-content {
     text-align: center;
 }
