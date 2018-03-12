@@ -23,3 +23,9 @@ main .row {
 
 .td-center-content * {
   margin: 0px 5px 0px 5px; }
+#mainprincipale{
+  height:700px;
+}
+.col-md-3{
+  margin:0 auto;
+}
