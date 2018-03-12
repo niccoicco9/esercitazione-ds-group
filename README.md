@@ -11,3 +11,4 @@ Una volta caricata la pagina index.html vengono scaricati un numero fisso di tod
 componenti 'cards' di Bootstrap quanti sono i todos. 
 
 Cliccando su un todo si passa alla pagina di dettaglio del todo stesso, che può essere completato oppure no.  
+<pre>dddddddddd</pre>
