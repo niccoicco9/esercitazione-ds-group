@@ -28,7 +28,7 @@ function checkLogin() {
 if (sessionStorage && sessionStorage.getItem('onlineUser')) {
 	var onlineUser = JSON.parse(sessionStorage.getItem('onlineUser'));
 	document.getElementById('nav-login').innerHTML = '<a class='nav-link' href='index.html' onclick='logout()'>Logout</a>";
-	document.getElementById('nav-signin').innerHTML = '<a class='nav-link' href='index.html'>' + onlineUser.email + '</a>';
+	document.getElementById('nav-signin').innerHTML = "<a class='nav-link' href='index.html'>" + onlineUser.email + "</a>";
 	getData().extractTodos(function(data) { 
 		showTodos(data, onlineUser.id); 
 	});
