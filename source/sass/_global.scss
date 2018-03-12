@@ -13,3 +13,7 @@ main .row {
 .td-center-content {
     text-align: center;
 }
+
+.td-center-content * {
+    margin: 0px 5px 0px 5px;
+}
