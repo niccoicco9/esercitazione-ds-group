@@ -7,21 +7,19 @@ L'idea originaria era quella di gestire degli elementi di tipo post prelevati da
 successivamente per i todo. Il motivo è che a nostro parere si adattano meglio all'implementazione della funzionalità di 
 modifica item. I todo sono associati tramite id a un particolare utente, ed è infatti possibile registrarsi tramite un form: a registrazione effettuata verrà associato all'utente un id selezionato casualmente.
 
-Terminato il caricamente della pagina index.html vengono eseguite le seguenti funzioni:
+Terminato il caricamento della pagina index.html vengono eseguite le seguenti funzioni:
 
 <div class="highlight highlight-source-js">
 <pre>
-
 window.addEventListener('load', function() {
 	'use strict';
 	checkLogin();
 	addListeners();
 });
-
-
 </pre>
 </div>
 
+La funzione checkLogin() controlla che sia stato effettuato effettivamente l'accesso controllando l'item 'onlineUser' salvato nel sessionStorage del browser; se positivo, viene eseguita la funzione 'extractTodos()' che preleva i dati dal servizio REST:
 
 <div class="highlight highlight-source-js">
 <pre>
@@ -38,6 +36,5 @@ function checkLogin() {
 }</pre>
 </div>
 
-All'avvio della pagina index.html vengono eseguite le funzioni che gestiscono il controllo 
 
 Cliccando su un todo si passa alla pagina di dettaglio del todo stesso, che può essere completato oppure no.  
