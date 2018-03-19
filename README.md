@@ -11,7 +11,7 @@ Terminato il caricamento della pagina index.html vengono eseguite le seguenti fu
 
 
 <pre>
-```js
+```ruby
 window.addEventListener('load', function() {
 	'use strict';
 	checkLogin();
