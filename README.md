@@ -11,7 +11,7 @@ Terminato il caricamento della pagina index.html vengono eseguite le seguenti fu
 
 
 <pre>
-```javascript
+```js
 window.addEventListener('load', function() {
 	'use strict';
 	checkLogin();
